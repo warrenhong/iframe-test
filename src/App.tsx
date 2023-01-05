@@ -1,8 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const [receivedText, setReceivedText] = useState("");
+
+  useEffect(() => {
+    const onMessageReceived = (event: any) => {
+      const { data, eventSourceKey } = event.data;
+      console.log(event)
+      setReceivedText(data);
+    };
+    window.addEventListener("on", onMessageReceived);
+
+    return () => {
+      window.removeEventListener("on", onMessageReceived);
+    };
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,15 +25,10 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-Work
-        </a>
       </header>
+      <div style={receivedText ? { fontSize: "48px", color: "red" } : {}}>
+        {receivedText}
+      </div>
     </div>
   );
 }
