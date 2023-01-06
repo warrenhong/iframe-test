@@ -11,10 +11,10 @@ function App() {
       console.log(event)
       setReceivedText(data);
     };
-    window.addEventListener("on", onMessageReceived);
+    window.addEventListener("message", onMessageReceived);
 
     return () => {
-      window.removeEventListener("on", onMessageReceived);
+      window.removeEventListener("message", onMessageReceived);
     };
   }, []);
 
