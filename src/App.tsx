@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const [receivedText, setReceivedText] = useState("");
+  const [receivedText, setReceivedText] = useState("hey hey");
 
   useEffect(() => {
     const onMessageReceived = async (event: any) => {
       const { data } = event;
-      // console.log(event, data);
+      console.log(event, data.dede);
       setReceivedText(JSON.stringify(data.eventSourceKey));
     };
     window.addEventListener("message", onMessageReceived);
@@ -21,10 +20,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>PLEASE WORK ii</p>
+        <p>PLEASE WORK iii</p>
       </header>
-      <div style={receivedText ? { fontSize: "48px", color: "red" } : {}}>
+      <div style={receivedText ? { fontSize: "48px", color: "red" } : {fontSize: "48px", color: "blue"}}>
         {receivedText}
       </div>
     </div>
