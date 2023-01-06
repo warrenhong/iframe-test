@@ -8,8 +8,8 @@ function App() {
   useEffect(() => {
     const onMessageReceived = async (event: any) => {
       const { data } = event;
-      console.log(event, data);
-      setReceivedText(JSON.stringify(data));
+      // console.log(event, data);
+      setReceivedText(JSON.stringify(data.eventSourceKey));
     };
     window.addEventListener("message", onMessageReceived);
 
