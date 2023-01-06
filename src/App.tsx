@@ -11,7 +11,7 @@ function App() {
     if (data.eventSourceKey === "lolol") {
       setReceivedText(JSON.stringify(data.eventSourceKey));
     }
-  },[receivedText,once]);
+  },[receivedText]);
 
   useEffect(() => {
     window.addEventListener("message", onMessageReceived);
@@ -19,7 +19,7 @@ function App() {
     return () => {
       window.removeEventListener("message", onMessageReceived);
     };
-  }, [onMessageReceived]);
+  }, [onMessageReceived, once]);
 
   return (
     <div className="App">
