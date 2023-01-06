@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     const onMessageReceived = async (event: any) => {
-      const { data } = event.data;
+      const { data } = event;
       console.log(event, data);
       setReceivedText(JSON.stringify(data));
     };
@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>warren1129</p>
+        <p>PLEASE WORK</p>
       </header>
       <div style={receivedText ? { fontSize: "48px", color: "red" } : {}}>
         {receivedText}
