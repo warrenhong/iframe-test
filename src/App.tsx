@@ -8,8 +8,8 @@ function App() {
   useEffect(() => {
     const onMessageReceived = (event: any) => {
       const { data, eventSourceKey } = event.data;
-      console.log(event)
-      setReceivedText(data);
+      console.log(data.dede)
+      setReceivedText(data.dede);
     };
     window.addEventListener("message", onMessageReceived);
 
