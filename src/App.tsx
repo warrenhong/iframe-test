@@ -2,7 +2,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [once, setOnce]= useState(false)
+  const calledOnce = React.useRef(false);
+
   const [receivedText, setReceivedText] = useState<string>("hey hey");
   const onMessageReceived = useCallback((event: any) => {
     const { data } = event;
@@ -10,21 +11,26 @@ function App() {
     console.log(receivedText)
     if (data.eventSourceKey === "lolol") {
       setReceivedText(JSON.stringify(data.eventSourceKey));
+      calledOnce.current = true
     }
   },[receivedText]);
 
   useEffect(() => {
+    if (calledOnce.current) {
+      return;
+    }
+
     window.addEventListener("message", onMessageReceived);
 
     return () => {
       window.removeEventListener("message", onMessageReceived);
     };
-  }, [onMessageReceived, once]);
+  }, [onMessageReceived]);
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>PLEASE WORK "" PLEASE WORK</p>
+        <p>PLEASE WORK 3 PLEASE WORK</p>
         <div
           className="text"
           style={
