@@ -8,12 +8,12 @@ function App() {
   const onMessageReceived = useCallback((event: any) => {
     const { data } = event;
     console.log(data);
-    console.log(receivedText)
+
     if (data.eventSourceKey === "lolol") {
       setReceivedText(JSON.stringify(data.eventSourceKey));
       calledOnce.current = true
     }
-  },[receivedText]);
+  },[]);
 
   useEffect(() => {
     if (calledOnce.current) {
