@@ -9,7 +9,7 @@ function App() {
       className="button"
         onClick={() => {
           const payload = {
-            eventSourceKey: "nyc",
+            eventSourceKey: "incoming-event",
             data: { variable: "HEY I'M FROM THE IFRAME" },
           };
           
