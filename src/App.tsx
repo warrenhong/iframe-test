@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     const onMessageReceived = (event: any) => {
       const { data, eventSourceKey } = event.data;
-      console.log(data.dede)
+      console.log(event)
       setReceivedText(data.dede);
     };
     window.addEventListener("message", onMessageReceived);
@@ -23,7 +23,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         HELLO 2
+         HELLO 3
         </p>
       </header>
       <div style={receivedText ? { fontSize: "48px", color: "red" } : {}}>
