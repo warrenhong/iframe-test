@@ -5,9 +5,9 @@ import "./App.css";
 function App() {
   const [receivedText, setReceivedText] = useState("");
 
-  const onMessageReceived = useCallback((event: any) => {
+  const onMessageReceived = useCallback(async(event: any) => {
     const { data, eventSourceKey } = event.data;
-    console.log(event);
+    console.log(event,eventSourceKey);
     setReceivedText(data.dede);
   }, []);
   useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>HELLO 223123</p>
+        <p>Hwdewed</p>
       </header>
       <div style={receivedText ? { fontSize: "48px", color: "red" } : {}}>
         {receivedText}
