@@ -7,8 +7,8 @@ function App() {
   useEffect(() => {
     const onMessageReceived = async (event: any) => {
       const { data } = event;
+      console.log(data);
       if (data.eventSourceKey) {
-        // console.log(event, data.dede);
         setReceivedText(JSON.stringify(data.eventSourceKey));
       }
     };
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>PLEASE WORK PLEASE</p>
+        <p>PLEASE WORK DEWEWDWEDWE</p>
         <div
           className="text"
           style={
