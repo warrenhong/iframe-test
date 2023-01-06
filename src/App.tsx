@@ -4,8 +4,9 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">DEMO 2</header>
+      <header className="App-header">iframe bi-directional demo</header>
       <button
+      className="button"
         onClick={() => {
           const payload = {
             eventSourceKey: "nyc",
@@ -20,7 +21,7 @@ function App() {
           window.postMessage(payload, domain);
         }}
       >
-        SEND TO AIRKIT
+        SEND DATA TO AIRKIT
       </button>
     </div>
   );

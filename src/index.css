@@ -23,3 +23,7 @@ code {
   font-size: 18px;
   font-weight: bold;
 }
+
+.root {
+  width: 100%;
+}

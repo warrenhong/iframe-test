@@ -1,12 +1,20 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: #d0e2fa;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 24px;
   color: white;
+  font-weight: bold;
+  width: 100%;
 }
 
 .App-link {
@@ -24,4 +32,13 @@
 
 .text {
   font-size: 48px;
+}
+
+.button {
+  margin-top: 24px;
+  border: none;
+  font-size: 18px;
+  width: 40%;
+  padding: 4px 20px;
+  font-weight: bold;
 }
