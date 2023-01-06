@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>PLEASE WORK</p>
+        <p>PLEASE WORK ii</p>
       </header>
       <div style={receivedText ? { fontSize: "48px", color: "red" } : {}}>
         {receivedText}
