@@ -1,5 +1,3 @@
-alert("dede");
-
 const elem = document.getElementById("received");
 
 window.addEventListener("message", (event) => {
