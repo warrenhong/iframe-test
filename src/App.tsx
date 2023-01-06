@@ -4,16 +4,15 @@ import "./App.css";
 function App() {
   const calledOnce = React.useRef(false);
 
-
   const onMessageReceived = useCallback((event: any) => {
     const { data } = event;
     console.log(data);
 
     if (data.eventSourceKey === "lolol") {
       // setReceivedText(JSON.stringify(data.eventSourceKey));
-      calledOnce.current = true
+      calledOnce.current = true;
     }
-  },[]);
+  }, []);
 
   useEffect(() => {
     if (calledOnce.current) {
@@ -29,9 +28,20 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        HEY MAN
-      </header>
+      <header className="App-header">DEMO</header>
+      <button
+        onClick={() => {
+          window.postMessage(
+            {
+              eventSourceKey: "nyc",
+              data: { variable: "HEY I'M FROM THE IFRAME" },
+            },
+            "*"
+          );
+        }}
+      >
+        SEND TO AIRKIT
+      </button>
     </div>
   );
 }
