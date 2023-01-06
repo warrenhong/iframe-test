@@ -14,6 +14,10 @@ function App() {
           
           window.parent.postMessage(payload, "*");
           window.postMessage(payload, "*");
+
+          const domain = window.location !== window.parent.location ? document.referrer : document.location.href
+          window.parent.postMessage(payload, domain);
+          window.postMessage(payload, domain);
         }}
       >
         SEND TO AIRKIT
