@@ -4,8 +4,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">war</header>
-      <header className="App-header">iframe Bi-Directional Demo</header>
+      <header className="App-header">iframe Bi-Directional Demo 1</header>
       <button
       className="button"
         onClick={() => {
