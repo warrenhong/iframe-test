@@ -1,10 +1,15 @@
-const elem = document.getElementById("received");
+const iframe1 = document.getElementById("iframe1");
+const iframe2 = document.getElementById("iframe2");
 
 window.addEventListener("message", (event) => {
   const { data } = event;
     console.log(event)
-  if (data.eventSourceKey === "lolol") {
-    elem.innerText = data.payload.dede;
+  if (data.eventSourceKey === "iframe1") {
+    iframe1.innerText = data.payload.dede;
+  }
+
+  if (data.eventSourceKey === "iframe2") {
+    iframe2.innerText = data.payload.dede;
   }
 });
 
